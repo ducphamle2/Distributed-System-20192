@@ -1,0 +1,7 @@
+Q1: Role of the middleware is to provide a general architecture with heterogeneity, transparency and distribution of the system
+Q2: Some of the examples: Access, location, migration, relocation, replication, concurrency and failure.
+Q3: Because sometimes it is impossible to know if a system is down or it is just slow. For example, a resource is located in a machine B which has lost connection to other machines. A user tries to request that resource from a machine A. As a result, the system tries to locate the resource but fails because only B holds that resource, which leads to freezing the entire process. The user cannot know if the system has some errors, or it is currently fetching data slowly.
+Q4: Because we need to consider the trade-off between transparency and system performance. The highest degree of transparency means a slow system.
+Q5: An open distributed system offers services according to clearly defined rules with easy interopetating with other open systems. These rules are interfaces defined by IDL which need to be generic because we do not want interfaces to be focused on a range of specific providers.
+Q6: Scalability means we can add more resources and users, add more independent administrative operations from different organizations and the resources can be located far away from users.
+Q7: Some scaling techniques: Asynchronous communication, distribution, replication and caching.

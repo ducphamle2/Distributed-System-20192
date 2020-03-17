@@ -1,0 +1,7 @@
+Q1: The path is /var/www/html/index.html
+Q2: Default port of apache2 is 80
+Q3: 755 means everyone can read and execute the file, while the owner can write
+Q4: The html files are displayed through the web browsers and we can see the results. This is because we have mapped the two domain names with our localhost, while these domain names are virtual server hosts created by apache2 with the configurations example.com.conf and test.com.conf. The document root is used to find the html files for the web browser.
+Q5: We can do that by adjusting the configuration file to setup a virtual host ip address differently rather than 127.0.0.1. After that, other machines in the same LAN can call such addresses to access to different hosts.
+Q6: The code in the while loop should be scanning the user's inputs and then send them to the server. If a newline is typed then we stop scanning, and after that we try to print out the messages returned by the server.
+Q7: The method 'run' will run the code through a new thread for the client-server connection. It is called automatically when the 'start' method is called which creates a new thread

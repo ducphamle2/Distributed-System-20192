@@ -16,11 +16,13 @@ Question 4:
 
 Question 5:
 	Two JNDI are used because the first one is used to name the topic connection factory instance so that the clients and servers and connect to (topic connection factory is used to create connections to the associated messaging provider of JMS topic destinations, for publish and subscribe messaging). The second one is used to name the topic instance for the client and server to lookup and access to.
+
 Question 6:
 	Based on the event-based system diagram, our subscriber (MyReceiver) and publisher (MySender) in the program are two components. There is a topic called "myTopic", which is the "Event Bus" in the diagram. The publisher uses "myTopicConnectionFactory" as a connection to connect to the topic. 
 After that, the publisher publishes a message to the "myTopic" topic. 
 On the other hand, the subscriber also makes a connection to the topic pool through "myTopicConnectionFactory" and lookups the topic "myTopic". The subscriber also needs to have a listener (MyListener) as an Event Delivery whenever a message is sent to the topic. 
 In conclusion, a common topic is created, publisher sends a message to the topic, the subscriber subscribes to the topic, listens and retrieve the message using the Listener component. This is a Publish/Subscribe system, and both components do not know each other (Processes are loosely coupled) => Event-based
+
 Question 7:
 	JMS and DDS both have the publish-and-subscribe model for event-based architecture, and they are both a middleware. 
 	For JMS, both subscribers and publishers must share the same topic, and publishers will send messages into that topic. In order for the subscribers to retrieve such messages, they should remain continuously active to collect the message. When it comes to long-term subscription, the messages that have not been collected will be redistributed when those subscribers become active again. By this way, JMS creates a loosely coupled model where subscribers and publishers may not know each other, they only need to know the topic they that they like.

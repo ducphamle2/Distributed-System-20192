@@ -47,5 +47,5 @@ Question 8:
 Question 9:
 
 Question 10:
-	Daemon server: store endpoints of servers (the servers will register their endpoints or DNS to the daemon). The client will request to this service, asking to get the specific servers
-	Superserver: Create sub servers for requested services. Each time a client makes a request, the superserver will create a sub server for this request to server the client. 
+	Daemon server: store endpoints of servers (the servers will register their endpoints or DNS to the daemon endpoint table). The client will request to this service, asking to get the specific servers. The server processes must run continously 
+	Superserver: Servers also register their endpoints to the superserver for requested services, but the server processes can stop and wait. Each time a client makes a request, the chosen server will be called by the superserver and serve its request. 

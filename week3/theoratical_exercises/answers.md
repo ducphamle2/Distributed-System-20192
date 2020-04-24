@@ -21,6 +21,7 @@ Question 4: Advantages:
 	Threads are independent, therefore they do not affect other threads when running.
 
 Question 5: 
+
 	Thread per request advantages: Good bandwidth and latency because there is no queue. Each request is executed immediately and independently.
 
 	Thread per request disavantages: May give stackoverflow when the server receives too many requests at the same time (threads are stored in stacks)

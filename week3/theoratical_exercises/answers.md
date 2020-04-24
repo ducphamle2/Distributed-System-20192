@@ -45,6 +45,7 @@ Question 8:
 	Because hardware changes really fast, while software is stable and cannot adapt to hardware, we need virtualization so softwares can run on their own virtual machines regardless of the different hardwares or machines.
 
 Question 9:
+	This technology is derived from the multiuser version of Windows, where the products of thin clients make use of networks, terminals and softwares from Windows to enhance or leverage resources for the servers in desktop. On the other hand, X-Window system focuses on inexpensive terminal for a number of users concurrently within a large server, where applications are executed as clients.
 
 Question 10:
 	Daemon server: store endpoints of servers (the servers will register their endpoints or DNS to the daemon endpoint table). The client will request to this service, asking to get the specific servers. The server processes must run continously 

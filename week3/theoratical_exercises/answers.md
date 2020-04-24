@@ -21,13 +21,13 @@ Question 4: Advantages:
 	Threads are independent, therefore they do not affect other threads when running.
 
 Question 5: 
-	Thread per request:
-		Advantages: Good bandwidth and latency because there is no queue. Each request is executed immediately and independently.
-		Disavantages: May give stackoverflow when the server receives too many requests at the same time (threads are stored in stacks)
+	Thread per request advantages: Good bandwidth and latency because there is no queue. Each request is executed immediately and independently.
 
-	Thread per object / connection:
-		Advantages: The number of threads are stables and there are not too many tasks to handle
-		Disavantages: load balancing problem, as some connections / objects may have too many requests, while others are too free.
+	Thread per request disavantages: May give stackoverflow when the server receives too many requests at the same time (threads are stored in stacks)
+
+	Thread per object / connection advantages: The number of threads are stables and there are not too many tasks to handle
+
+	Thread per object / connection disavantages: load balancing problem, as some connections / objects may have too many requests, while others are too free.
 
 Question 6: 
 	Nodejs follow the Finite state machine.
@@ -37,8 +37,10 @@ Question 6:
 
 Question 7:
 	The reasons for multithreaded client in distributed systems are:
-		Creating a seperate UI for each thread for better user experience and system performance
-		Processing tasks in different threads concurrently to call api to different servers and receive responses from multiple servers when needed. Even though the server is multithreaded, bottleneck can happen at the client side, where the responses need to be executed sequentially not concurrently. Client needs to wait for the response of one server before requesting data from another server.
+
+	Creating a seperate UI for each thread for better user experience and system performance
+
+	Processing tasks in different threads concurrently to call api to different servers and receive responses from multiple servers when needed. Even though the server is multithreaded, bottleneck can happen at the client side, where the responses need to be executed sequentially not concurrently. Client needs to wait for the response of one server before requesting data from another server.
 	Example: web browser
 
 Question 8:

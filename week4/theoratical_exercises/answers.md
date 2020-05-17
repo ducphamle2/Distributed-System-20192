@@ -38,6 +38,10 @@ We do not use only a single header that controls everything because:
 
 ## Question 5:
 
+**+ Pass by reference**: In this case, the same pointer is passed for two parameters, so after the procedure, the value of that same pointer is incremented two times, hence final result is 2
+
+**+ Copy/restore**: In this case, it uses pass by value, so two copies of i are passed and are incremented to 1. After that, the writeback will be sequential, and the second writeback will overwrite the first one => final result is 1.
+
 ## Question 6:
 
 **+**: It has scalability problems because when the network goes bigger, the client and server are further apart from each other, it would take more time for the server to response back to the client. While waiting for the server, the client is in idle mode, and it will be a waste of time. If the system is like this, it will not be able to scale bigger.

@@ -1,6 +1,6 @@
 ## Question 1: 
 
-**1st example**: If there is one resource and that is used on a distributed system with many hosts and multiple processes, each host has its own local clock, we cannot use semaphore to resolve the problem of resource sharing between processes => need a synchronization mechanism.
+**1st example**: If there is one resource and that is used on a distributed system with many hosts and multiple processes, each host has its own local clock, we cannot use semaphore to resolve the problem of which process can be allowed to use the resource => need a synchronization mechanism.
 
 **2nd example**: In an event driven system where the order of the events is important, we need to make sure that an message m1 is executed before an message m2 if m is sent before m1. m2 can reach the destination earlier due to the network layer but we cannot control that => need a synchronization mechanism
 

@@ -4,7 +4,7 @@
 
 ## Question 1: 
 
-**1st example**: If there is one resource and that is used on a distributed system with many hosts and multiple processes, each host has its own local clock, we cannot use semaphore to resolve the problem of which process can be allowed to use the resource first => need a synchronization mechanism.
+**1st example**: If there is one shared resource that cannot support multiple processes on a distributed system with many hosts and multiple processes, each host has its own local clock, we cannot use semaphore to resolve the problem of which process can be allowed to use the resource first => need a synchronization mechanism.
 
 **2nd example**: In an event driven system where the order of the events is important, we need to make sure that a message m1 is executed before a message m2 if m1 is sent before m2. m2 can reach the destination earlier due to the network layer but we cannot control that => need a synchronization mechanism
 
@@ -89,7 +89,7 @@ VC2 = (0, 1, 0)
 
 **+**: At X3, before sending message m2 to P1 and P2:
 
-**VC<sub>0</sub>[0] += 1 = 1**
+**VC<sub>0</sub>[0] += 1 = 0 + 1 = 1**
 
 => VC0 = (1, 1, 0)
 

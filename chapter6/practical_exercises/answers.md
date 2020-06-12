@@ -19,9 +19,13 @@ The result is always 3000 because now a worker can only access the variable when
 the code part that needs to be completed:
 
 while (time(NULL) <= end)
+
   {
+
     shared++;
+
     sleep(1);
+
   }
 
 ## Question 5:
@@ -35,8 +39,11 @@ For example, we have balance = balance - v; while thread 1 finish calculating ba
 The difference may come from the code block below:
 
   while (lock > 0);
+
   lock = 1; //set lock
+
   shared++; //increment
+
   lock = 0; //unlock
 
 After lock = 0, the while (lock > 0) stops for other threads running concurrently. As a result, a number of threads start the next code lines: lock = 1 and shared++ at the same time => the resource is used by multiple threads => lock fails
@@ -46,28 +53,39 @@ After lock = 0, the while (lock > 0) stops for other threads running concurrentl
 The balance is equal to the result of INIT_BALANCE + credits - debits. 
 
 ./mutex-lock-banking 1000
+
         Credits:        4537683
+
          Debits:        3609904
 
 50+4537683-3609904=     927829
+
          Balance:       927829
 
 ## Question 8:
 
 ./fine-locking-bank 5000
+
 Time spent: 8.08
+
         Credits:        16006627
+
          Debits:        3332143
 
 50+16006627-3332143=    12674534
+
          Balance:       12674534
 
 ./mutex-lock-banking 5000
+
 Time spent: 9.17
+
         Credits:        11858147
+
          Debits:        10003773
 
 50+11858147-10003773=           1854424
+
          Balance:       1854424
 
 The results show that the fine-locking strategy is faster (1 sec faster is a lot) when the number of threads increases

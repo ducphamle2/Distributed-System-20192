@@ -22,15 +22,17 @@ The nodes can add another protocol to notify each other about the current positi
 
 ## Question 5:
 
-3 sends messages to 4, 5, 6, 7 => total 4 messages
+P3 sends messages to P4, P5, P6, P7 => total 4 messages
 
-5, 6 rep to 3 => total 6 messages
+P5, P6 rep to P3 => total 4 + 2 = 6 messages
 
-5 to 6, 7 => total 8 messages
+P5 to P6, P7 => total 6 + 2 = 8 messages
 
-6 rep to 5 => total 9 messages
+P6 rep to P5 => total 8 + 1 = 9 messages
 
-6 to 7 => total 10 messages
+P6 to P7 => total 8 + 1 = 10 messages
+
+P6 broadcast to all other nodes => total 10 + 6 = 16 messages
 
 In conclusion: total 10 messages to elect a coordinator
 

@@ -18,7 +18,7 @@ The result is always 3000 because now a worker can only access the variable when
 
 the code part that needs to be completed:
 
-  while (time(NULL) <= end)
+    while (time(NULL) <= end)
 
     {
 
@@ -54,39 +54,39 @@ The balance is equal to the result of INIT_BALANCE + credits - debits.
 
 ./mutex-lock-banking 1000
 
-        Credits:        4537683
+    Credits:        4537683
 
-         Debits:        3609904
+    Debits:        3609904
 
-        50+4537683-3609904=     927829
+    50+4537683-3609904=     927829
 
-         Balance:       927829
+    Balance:       927829
 
 ## Question 8:
 
 ./fine-locking-bank 5000
 
-        Time spent: 8.08
+    Time spent: 8.08
 
-        Credits:        16006627
+    Credits:        16006627
 
-         Debits:        3332143
+    Debits:        3332143
 
-        50+16006627-3332143=    12674534
+    50+16006627-3332143=    12674534
 
-         Balance:       12674534
+    Balance:       12674534
 
 ./mutex-lock-banking 5000
 
-        Time spent: 9.17
+    Time spent: 9.17
 
-        Credits:        11858147
+    Credits:        11858147
 
-         Debits:        10003773
+    Debits:        10003773
 
-        50+11858147-10003773=           1854424
+    50+11858147-10003773=           1854424
 
-         Balance:       1854424
+    Balance:       1854424
 
 The results show that the fine-locking strategy is faster (1 sec faster is a lot) when the number of threads increases
 

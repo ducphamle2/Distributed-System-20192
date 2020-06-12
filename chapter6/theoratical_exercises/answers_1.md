@@ -6,9 +6,7 @@
 
 **1st example**: If there is one shared resource that cannot support multiple processes on a distributed system with many hosts and multiple processes, each host has its own local clock, we cannot use semaphore to resolve the problem of which process can be allowed to use the resource first => need a synchronization mechanism.
 
-**2nd example**: In an event driven system where the order of the events is important, we need to make sure that a message m1 is executed before a message m2 if m1 is sent before m2. m2 can reach the destination earlier due to the network layer but we cannot control that => need a synchronization mechanism
-
-# NOTE: 2nd example needs fix
+**2nd example**: In the example of enforcing causal communication, assume that all three processes agree on an order of events that if a message m is sent before m*, then it should be executed first. However, in the example, m* is sent from P1 to P2 after m is sent from P0 to P2, but m* reaches P2 first based on the vector clock => break the event order => need a synchronization mechanism.
 
 ## Question 2:
 
@@ -18,11 +16,15 @@
   
   **+**: For example, let B be the time server, and A is a server that wants to synchronize its clock to the time server. A sends a a message to B at T1, arrive at T2. B sends back a response message at T3, arrive at T4. Then the time skew is (T2 - T1 + T3 - T4) / 2, and A uses this time skew to adjust its local clock to match with the time server.
 
+  **+**: NTP servers are those around the world that have access to atomic clocks, NTP clients which are normal computers will try to synchronize the clocks through NTP servers
+
 **Berkeley algorithm**: 
 
   **+**: Does not care about the exact time but care for synchronizing the local time system
 
   **+**: Use a time daemon that asks machines in the system for their local machine time. After receiving the responses from the machines, the time daemon tells the machines including itself to adjust their local time to match with each other.
+
+  **+**: Time daemon is a master node which is elected using the election algorithm within a set of nodes in the network, other nodes are called slaves.
 
 ## Question 3:
 
@@ -50,7 +52,7 @@ Assume that we have a process Pi and a counter Ci, the steps to update Ci for Pi
 
 **a)**:
 
-It is not absolutely correct. It is only correct when there's no deviation between the tim
+It is not absolutely correct, it is only correct when time from P to S equals time from S to P. This is because RTT/2 means the request time from P to S and the response time from S to P are equal. However, in reality this is not the case, and there will be deviation between the two request and response time, so the formula is not absolutely correct. 
 
 **b)**:
 

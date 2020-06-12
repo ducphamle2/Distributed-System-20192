@@ -74,4 +74,4 @@ The results show that the fine-locking strategy is faster (1 sec faster is a lot
 
 ## Question 9:
 
-There is no output because the program is in deadlock, and it is stuck there forever. A deadlock is when two threads waiting for the other's resource to be unlocked in order to unlock its currently used resource. In this code, thread 1 is waiting for b to be unlocked to unlock a, while thread 2 is waiting for a to be unlocked to unlock b. This leads to a situation called deadlock, and the program is stuck unless one of the two threads or both are killed which release the resources.
+There is no output because the program is in deadlock, and it is stuck there forever. A deadlock is when two threads or two processes waiting for the other's resource to be unlocked in order to unlock its currently used resource. In this code, thread 1 holding resource a is waiting for b to be unlocked to unlock a, while thread 2 is waiting for a to be unlocked to unlock b. This leads to a situation called deadlock, and the program is stuck unless one of the two threads or both are killed which release the resources.

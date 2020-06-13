@@ -44,10 +44,12 @@ Assume that the broadcasting messages still count as the total message to vote f
 
 In the best case scenario, Pi is the process P(N-1) where N is the broken coordinator => the total message is N - 1 because of broadcasting
 
-In the worst case scenario, Pi has to send messages from N-1 to itself, the total messages needed is (N - 1 - i) * 2 + N - 1 where N - 1 - i is the logical distance from P(N-1) to Pi, it multiplies with 2 because there are request and response messages, and finally it needs to send N - 1 messages to broadcast to other nodes.
+In the worst case scenario, Pi has to send messages from N-1 to itself, the total messages needed is (N - 1 - i) + N - 1 where N - 1 - i is the logical distance from P(N-1) to Pi, and finally it needs to send N - 1 messages to broadcast to other nodes.
 
 **b)**: 
 
-In both cases, the broken node needs to broadcast to N - 1 messages to N - 1 nodes to rebuild the status table.
+In both cases, the recovered node needs to broadcast to N - 1 messages to N - 1 nodes to rebuild the status table. Consider the total number of broken nodes in the system is k, so the recovered node receives N - k "OK" messages => total messages currently is 2N - 1 - k.
 
-First case, when the broken node has a higher ID than the current coordinator ID, the broken node will hold a new election to change the current coordinator ID, and it costs in total
+1st case, when the broken node has a higher ID than the current coordinator ID, the broken node will hold a new election to change the current coordinator ID, and it uses the algorithm of a) to elect, so the total messages for the first case is 2N - 1 - k + (N - 1 - i) + N - 1 = 4N - k - i - 2 messages
+
+For the 2nd case, because it is a lower ID node, it only tries to recover its state table, which takes 2N - 1 - k messages in total.

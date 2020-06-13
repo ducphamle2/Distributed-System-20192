@@ -87,7 +87,7 @@ VC0 = (0, 1, 0)
 
 VC1 = (0, 1, 0)
 
-VC2 = (0, 1, 0)
+VC2 = (0, 0, 0)
 
 **+**: At X3, before sending message m2 to P1 and P2:
 
